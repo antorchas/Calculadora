@@ -68,9 +68,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Calculadora.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculadora.aspx.cs">
+      <DependentUpon>Calculadora.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calculadora.aspx.designer.cs">
+      <DependentUpon>Calculadora.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

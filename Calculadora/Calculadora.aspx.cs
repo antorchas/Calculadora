@@ -39,6 +39,40 @@ namespace Calculadora
                 lblResultado.Text = Calcular();
                
             }
+
+            double n1 = double.Parse(txtnro1.Text);
+            double n2 = double.Parse(txtnro2.Text);
+            double res; 
+
+
+            if (rbSumar.Checked == true)
+            {
+                res = n1 + n2;
+                lblResultado.Text = Convert.ToString(res);
+            }
+
+            else if (rbRestar.Checked == true)
+            {
+                res = n1 - n2;
+                lblResultado.Text = Convert.ToString(res);
+
+            }
+
+            else if (rbMult.Checked == true)
+            {
+                res = n1 * n2;
+               lblResultado.Text = Convert.ToString(res);
+
+            }
+
+            else if (rbDividir.Checked == true)
+            {
+                res = n1 / n2;
+                lblResultado.Text = Convert.ToString(res);
+
+            }
+
+
         }
         private string Calcular()
         {

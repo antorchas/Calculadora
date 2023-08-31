@@ -44,6 +44,15 @@
             <asp:TextBox ID="txtnro2" onkeypress="javascript:return solonumeros(event)" MaxLength="9" runat="server"></asp:TextBox>
             <br />
             <br />
+            <asp:RadioButton ID="rbSumar" runat="server" GroupName="rdButtons" Text="Sumar" />
+            <br />
+            <asp:RadioButton ID="rbRestar" runat="server" GroupName="rdButtons" Text="Restar" />
+            <br />
+            <asp:RadioButton ID="rbMult" runat="server" GroupName="rdButtons" Text="Multiplicar" />
+            <br />
+            <asp:RadioButton ID="rbDividir" runat="server" GroupName="rdButtons" Text="Dividir" />
+            <br />
+            <br />
               <asp:Label ID="Label3" runat="server" Text="Resultado: "></asp:Label><asp:Label ID="lblResultado" runat="server" Text="0"></asp:Label>
              <br />
              <br />

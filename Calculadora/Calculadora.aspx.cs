@@ -51,8 +51,21 @@ namespace Calculadora
             double n2 = double.Parse(txtnro2.Text);
             double res;
 
+            if (rbSumar.Checked == true)
+            {
+                res = n1 + n2;
+                resultado = res;
 
-            if (rbMult.Checked == true)
+            }
+
+            else if (rbRestar.Checked == true)
+            {
+                res = n1 - n2;
+                resultado = res;
+
+            }
+
+            else if (rbMult.Checked == true)
             {
                 res = n1 * n2;
                 resultado = res;

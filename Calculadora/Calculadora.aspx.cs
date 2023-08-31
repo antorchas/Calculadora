@@ -45,20 +45,7 @@ namespace Calculadora
             double res; 
 
 
-            if (rbSumar.Checked == true)
-            {
-                res = n1 + n2;
-                lblResultado.Text = Convert.ToString(res);
-            }
-
-            else if (rbRestar.Checked == true)
-            {
-                res = n1 - n2;
-                lblResultado.Text = Convert.ToString(res);
-
-            }
-
-            else if (rbMult.Checked == true)
+           if (rbMult.Checked == true)
             {
                 res = n1 * n2;
                lblResultado.Text = Convert.ToString(res);

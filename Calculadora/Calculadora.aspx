@@ -44,7 +44,7 @@
             <asp:TextBox ID="txtnro2" onkeypress="javascript:return solonumeros(event)" MaxLength="9" runat="server"></asp:TextBox>
             <br />
             <br />
-            <asp:RadioButton ID="rbSumar" runat="server" GroupName="rdButtons" Text="Sumar" />
+            <asp:RadioButton ID="rbSumar" runat="server" GroupName="rdButtons" Text="Sumar" Checked="True" />
             <br />
             <asp:RadioButton ID="rbRestar" runat="server" GroupName="rdButtons" Text="Restar" />
             <br />

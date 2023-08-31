@@ -40,33 +40,34 @@ namespace Calculadora
                
             }
 
-            double n1 = double.Parse(txtnro1.Text);
-            double n2 = double.Parse(txtnro2.Text);
-            double res; 
-
-
-           if (rbMult.Checked == true)
-            {
-                res = n1 * n2;
-               lblResultado.Text = Convert.ToString(res);
-
-            }
-
-            else if (rbDividir.Checked == true)
-            {
-                res = n1 / n2;
-                lblResultado.Text = Convert.ToString(res);
-
-            }
+            
 
 
         }
         private string Calcular()
         {
            double resultado = 0;
+            double n1 = double.Parse(txtnro1.Text);
+            double n2 = double.Parse(txtnro2.Text);
+            double res;
+
+
+            if (rbMult.Checked == true)
+            {
+                res = n1 * n2;
+                resultado = res;
+
+            }
+
+            else if (rbDividir.Checked == true)
+            {
+                res = n1 / n2;
+                resultado = res;
+
+            }
 
             if (resultado < 0) lblResultado.ForeColor = Color.Red;
-            else lblResultado.ForeColor = Color.DarkGreen;
+            else { lblResultado.ForeColor = Color.DarkGreen; }
 
             return resultado.ToString("###0.00");
         }

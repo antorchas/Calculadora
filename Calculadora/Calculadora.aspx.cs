@@ -22,6 +22,8 @@ namespace Calculadora
                 return "Debe Ingresar el primer número.";
             if (string.IsNullOrEmpty(txtnro2.Text.Trim()))
                 return "Debe Ingresar el segundo número.";
+            if(Convert.ToDouble(txtnro2.Text) == 0 && rbDividir.Checked)
+                return "No puede dividir un número por 0";
             return null;
         }
 
@@ -46,43 +48,53 @@ namespace Calculadora
         }
         private string Calcular()
         {
-           double resultado = 0;
-            double n1 = double.Parse(txtnro1.Text);
-            double n2 = double.Parse(txtnro2.Text);
-            double res;
-
-            if (rbSumar.Checked == true)
+            try
             {
-                res = n1 + n2;
-                resultado = res;
+                double resultado = 0;
+                double n1 = Convert.ToDouble(txtnro1.Text.Replace(".", ","));
+                double n2 = Convert.ToDouble(txtnro2.Text.Replace(".", ","));
+                double res;
 
+                if (rbSumar.Checked == true)
+                {
+                    res = n1 + n2;
+                    resultado = res;
+
+                }
+
+                else if (rbRestar.Checked == true)
+                {
+                    res = n1 - n2;
+                    resultado = res;
+
+                }
+
+                else if (rbMult.Checked == true)
+                {
+                    res = n1 * n2;
+                    resultado = res;
+
+                }
+
+                else if (rbDividir.Checked == true)
+                {
+                    res = n1 / n2;
+                    resultado = res;
+
+                }
+
+                if (resultado < 0) lblResultado.ForeColor = Color.Red;
+                else { lblResultado.ForeColor = Color.DarkGreen; }
+
+                return resultado.ToString("###0.00");
+            }
+            catch (FormatException)
+            {
+                lblResultado.ForeColor = Color.Red;
+                return "El número ingresado no tiene el formato correcto";
             }
 
-            else if (rbRestar.Checked == true)
-            {
-                res = n1 - n2;
-                resultado = res;
-
-            }
-
-            else if (rbMult.Checked == true)
-            {
-                res = n1 * n2;
-                resultado = res;
-
-            }
-
-            else if (rbDividir.Checked == true)
-            {
-                res = n1 / n2;
-                resultado = res;
-
-            }
-
-            if (resultado < 0) lblResultado.ForeColor = Color.Red;
-            else { lblResultado.ForeColor = Color.DarkGreen; }
-
-            return resultado.ToString("###0.00");
+          
         }
     }
 }
